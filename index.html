@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>शिफा वाटर - शुद्ध पानी, स्वस्थ जीवन</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1e88e5;
+            --secondary-color: #0d47a1;
+            --accent-color: #64b5f6;
+            --text-color: #333;
+            --light-bg: #f5f9ff;
+        }
+        
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .navbar {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1508610048659-a06b669d3321?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            position: relative;
+            margin-top: -56px;
+            padding-top: 56px;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to top, white, transparent);
+        }
+        
+        .section {
+            padding: 5rem 0;
+            position: relative;
+        }
+        
+        .section-title {
+            color: var(--secondary-color);
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--primary-color);
+        }
+        
+        .feature-box {
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            background: white;
+            border: 1px solid rgba(0,0,0,0.1);
+            height: 100%;
+        }
+        
+        .feature-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .feature-box i {
+            color: var(--primary-color);
+            background: var(--light-bg);
+            padding: 1.5rem;
+            border-radius: 50%;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+        
+        .app-download-btn {
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: all 0.3s;
+            background: var(--primary-color);
+            border: none;
+            font-size: 1.1rem;
+        }
+        
+        .app-download-btn:hover {
+            transform: scale(1.05);
+            background: var(--secondary-color);
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .contact-form .form-control {
+            border-radius: 10px;
+            padding: 1rem;
+            border: 1px solid rgba(0,0,0,0.1);
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-form .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.2rem rgba(30, 136, 229, 0.25);
+        }
+        
+        footer {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            padding: 2rem 0;
+            margin-top: auto;
+        }
+        
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            margin: 0 10px;
+            transition: all 0.3s;
+        }
+        
+        .social-icons a:hover {
+            background: white;
+            color: var(--primary-color) !important;
+            transform: translateY(-5px);
+        }
+        
+        @media (max-width: 768px) {
+            .section {
+                padding: 3rem 0;
+            }
+            
+            .hero-section {
+                min-height: 100vh;
+                padding: 6rem 0;
+            }
+            
+            .feature-box {
+                margin-bottom: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-water"></i> शिफा वाटर
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">विशेषताएं</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">हमारे बारे में</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">संपर्क</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">शुद्ध पानी, स्वस्थ जीवन</h1>
+                    <p class="lead mb-4">शिफा वाटर आपके लिए लाता है सबसे शुद्ध और स्वस्थ पानी। हमारा ऐप आपको देता है पानी की गुणवत्ता की रीयल-टाइम जानकारी।</p>
+                    <a href="app-release.apk" class="btn btn-light btn-lg app-download-btn" download="ShifaWater.apk">
+                        <i class="fab fa-android"></i> ऐप डाउनलोड करें
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section">
+        <div class="container">
+            <h2 class="section-title">हमारी विशेषताएं</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="feature-box text-center">
+                        <i class="fas fa-tint"></i>
+                        <h3>पानी की गुणवत्ता</h3>
+                        <p>रीयल-टाइम पानी की गुणवत्ता की जानकारी</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-box text-center">
+                        <i class="fas fa-bell"></i>
+                        <h3>अलर्ट्स</h3>
+                        <p>पानी की गुणवत्ता में बदलाव पर तुरंत सूचना</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-box text-center">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>विश्लेषण</h3>
+                        <p>विस्तृत विश्लेषण और रिपोर्ट्स</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="section-title text-start">हमारे बारे में</h2>
+                    <p class="lead">शिफा वाटर एक अग्रणी प्लेटफॉर्म है जो आपको शुद्ध और सुरक्षित पानी प्रदान करता है। हमारा मिशन है हर घर तक शुद्ध पानी पहुंचाना।</p>
+                    <p>हमारी टीम में विशेषज्ञ और तकनीकी विशेषज्ञ शामिल हैं जो निरंतर आपके लिए बेहतर सेवाएं प्रदान करने में लगे हैं।</p>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="img-fluid rounded shadow" alt="About Us">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">संपर्क करें</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <form class="contact-form">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="आपका नाम">
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="ईमेल">
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="5" placeholder="आपका संदेश"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 app-download-btn">भेजें</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h5>शिफा वाटर</h5>
+                    <p>शुद्ध पानी, स्वस्थ जीवन</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="social-icons">
+                        <a href="#" class="text-white"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
